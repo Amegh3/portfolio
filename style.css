@@ -1,0 +1,223 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000; /* Black background for a hacking feel */
+    color: #00ff00; /* Neon green text color */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Name Banner */
+.name-banner {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #00ff00;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    z-index: 999;
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 10px 20px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    color: #00ff00;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.nav-item a:hover {
+    color: #00cc00;
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+}
+
+.nav-item a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00ff00;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-item a:hover::before {
+    transform: scaleX(1);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 160px;
+    z-index: 1;
+    margin-top: 0.1cm;
+    top: 100%;
+    right: 0;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #00ff00;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    color: #00cc00;
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Intro Section Styles */
+.intro-section {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 100px); /* Ensure height takes up available space */
+    padding: 0 20px;
+    position: relative;
+    margin-top: 70px; /* Adjust this value to move closer to the name banner */
+}
+
+/* Intro Container */
+.intro-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust max-width as needed */
+    position: absolute;
+    left: 4cm; /* Move the entire intro section 4 cm to the right */
+}
+
+/* Intro Text Styles */
+.intro-text {
+    border-left: 2px solid #00ff00;
+    padding-left: 20px;
+    margin-right: 20px; /* Add some space between the text and the GIF */
+    flex: 1;
+}
+
+/* Title Styles */
+#intro-title {
+    font-size: 2rem;
+    color: #00ff00;
+    margin-bottom: 10px; /* Optional: Adjust spacing below the title if needed */
+}
+
+/* Role Animation Styles */
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper .static-txt {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-txts {
+    height: 68px;
+    overflow: hidden;
+    margin-left: 15px;
+    line-height: 79px;
+}
+
+.dynamic-txts li {
+    color: #FC6D6D;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -318px;
+    }
+}
+
+.dynamic-txts li span {
+    position: relative;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #343F4F;
+    border-left: 2px solid #FC6D6D;
+    animation: typing 1.5s steps(10) infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+/* Intro GIF Styles */
+.gif-container {
+    display: flex;
+    justify-content: center; /* Center horizontally within its container */
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    margin-left: 3cm; /* Move the GIF 3 cm from the left */
+}
+
+.gif-container img {
+    max-width: 100%; /* Ensure GIF scales appropriately */
+    height: auto;
+}

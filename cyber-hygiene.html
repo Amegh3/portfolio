@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Hygiene Checklist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto Mono', monospace;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #0d0d0d;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        main h2 {
+            font-size: 1.8rem;
+            margin-top: 30px;
+            color: #ff3333;
+        }
+
+        main p {
+            margin-bottom: 20px;
+        }
+
+        main ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        main ul li {
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        main ul li:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .exercise {
+            background: #0a0a0a;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #ff3333;
+        }
+
+        .exercise h3 {
+            font-size: 1.5rem;
+            color: #ff3333;
+        }
+
+        .exercise h4 {
+            font-size: 1.2rem;
+            color: #00ff00;
+            margin-top: 10px;
+        }
+
+        .exercise pre,
+        .exercise code {
+            background-color: #161616;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        #resources ul li {
+            margin-bottom: 10px;
+        }
+
+        #resources ul li a {
+            color: #00ff00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #resources ul li a:hover {
+            color: #ff3333;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #ffffff;
+            background-color: #00ff00;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .btn-back:hover {
+            background-color: #ff3333;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            margin-top: 20px;
+            color: #cccccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <a href="index.html" class="btn-back" id="backButton"><i class="fas fa-home"></i></a>
+            <div class="loading" id="loading">
+                <div></div>
+            </div>
+            <header>
+                <img src="static/images/logo.png" alt="Logo">
+                <h1>Cyber Hygiene Checklist</h1>
+            </header>
+            <main>
+                <section id="best-practices">
+                    <h2><i class="fas fa-shield-alt"></i> Best Practices for Cyber Hygiene</h2>
+                    <p>Follow these practices to significantly enhance your cybersecurity posture:</p>
+                    <ul>
+                        <li><i class="fas fa-key"></i> <strong>Use Multi-Factor Authentication (MFA):</strong> Add an extra layer of security by requiring additional verification methods beyond just a password.</li>
+                        <li><i class="fas fa-sync-alt"></i> <strong>Regularly Update Software:</strong> Keep all your software, including operating systems and applications, up-to-date to protect against known vulnerabilities.</li>
+                        <li><i class="fas fa-hdd"></i> <strong>Backup Data:</strong> Regularly back up important data to ensure you can recover it in case of a ransomware attack or data loss.</li>
+                        <li><i class="fas fa-network-wired"></i> <strong>Secure Your Network:</strong> Use firewalls and encrypt your Wi-Fi network to prevent unauthorized access.</li>
+                        <li><i class="fas fa-users"></i> <strong>Educate Yourself and Others:</strong> Stay informed about the latest cybersecurity threats and educate your family or colleagues to recognize and respond to potential threats.</li>
+                    </ul>
+                </section>
+
+                <section id="practical-exercises">
+                    <h2><i class="fas fa-laptop-code"></i> Practical Exercises</h2>
+
+                    <div class="exercise">
+                        <h3><i class="fas fa-envelope"></i> Phishing Scams</h3>
+                        <h4>How Attackers Exploit:</h4>
+                        <p>Attackers send emails that appear to be from legitimate sources, such as banks or companies, requesting sensitive information or login credentials.</p>
+                        <h4>Demo Phishing Email:</h4>
+                        <pre><code>
+Subject: Urgent Account Verification Needed
+
+Dear User,
+
+We have detected unusual activity on your account. Please verify your account details by clicking the link below:
+
+[Click Here to Verify Your Account]
+
+Thank you,
+Your Bank
+                        </code></pre>
+                        <h4>Prevention Tips:</h4>
+                        <ul>
+                            <li><i class="fas fa-exclamation-triangle"></i> Be cautious of unsolicited emails asking for personal information.</li>
+                            <li><i class="fas fa-check"></i> Verify the sender’s email address and look for signs of phishing.</li>
+                            <li><i class="fas fa-link"></i> Do not click on links or download attachments from unknown sources.</li>
+                            <li><i class="fas fa-shield-alt"></i> Enable anti-phishing features in your email client.</li>
+                        </ul>
+                        <h4>Recovery Method:</h4>
+                        <p>If you suspect you’ve fallen for a phishing scam, immediately change your passwords and contact your bank or service provider. Report the incident to your IT department or local authorities if necessary.</p>
+                    </div>
+
+                    <div class="exercise">
+                        <h3><i class="fas fa-network-wired"></i> Network Penetration Testing</h3>
+                        <h4>How Attackers Exploit:</h4>
+                        <p>Attackers scan for open ports and vulnerabilities in your network to gain unauthorized access.</p>
+                        <h4>Demo Scan Command:</h4>
+                        <pre><code>nmap -sS -p- 192.168.1.1</code></pre>
+                        <h4>Prevention Tips:</h4>
+                        <ul>
+                            <li><i class="fas fa-tools"></i> Regularly scan your network for vulnerabilities using tools like Nmap.</li>
+                            <li><i class="fas fa-sync-alt"></i> Apply security patches and updates to your systems.</li>
+                            <li><i class="fas fa-firewall"></i> Use firewalls and intrusion detection systems to monitor network traffic.</li>
+                        </ul>
+                        <h4>Recovery Method:</h4>
+                        <p>If a vulnerability is discovered, immediately address it by applying patches and adjusting security settings. Conduct a thorough investigation to determine if there was any unauthorized access.</p>
+                    </div>
+
+                    <div class="exercise">
+                        <h3><i class="fas fa-search"></i> Vulnerability Assessment</h3>
+                        <h4>How Attackers Exploit:</h4>
+                        <p>Attackers use tools to scan for known vulnerabilities in software or systems, which can then be exploited to gain unauthorized access.</p>
+                        <h4>Demo Scan Command:</h4>
+                        <pre><code>openvas-cli --scan 192.168.1.1</code></pre>
+                        <h4>Prevention Tips:</h4>
+                        <ul>
+                            <li><i class="fas fa-shield-alt"></i> Regularly perform vulnerability assessments using tools like OpenVAS.</li>
+                            <li><i class="fas fa-tools"></i> Review and apply security patches promptly.</li>
+                            <li><i class="fas fa-gear"></i> Configure your systems with strong security settings and policies.</li>
+                        </ul>
+                        <h4>Recovery Method:</h4>
+                        <p>If vulnerabilities are found, take immediate action to fix them. Perform a follow-up assessment to ensure the issues are resolved and no additional vulnerabilities exist.</p>
+                    </div>
+                </section>
+
+                <section id="trending-crimes">
+                    <h2><i class="fas fa-chart-line"></i> Trending Cyber Crimes in India</h2>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <strong>Phishing Scams:</strong> Phishing scams continue to rise, with attackers using increasingly convincing methods to steal personal information and login credentials.</li>
+                        <li><i class="fas fa-rocket"></i> <strong>Cryptocurrency Fraud:</strong> Scammers are exploiting the popularity of cryptocurrencies to perpetrate fraudulent schemes, including fake investment opportunities and Ponzi schemes.</li>
+                        <li><i class="fas fa-share-alt"></i> <strong>Social Media Exploits:</strong> Cybercriminals are leveraging social media platforms to spread malware, conduct phishing attacks, and exploit personal information.</li>
+                        <li><i class="fas fa-database"></i> <strong>Data Breaches:</strong> High-profile data breaches are exposing sensitive information of millions of users, leading to identity theft and financial losses.</li>
+                    </ul>
+                </section>
+
+                <section id="resources">
+                    <h2><i class="fas fa-book"></i> Additional Resources</h2>
+                    <ul>
+                        <li><a href="https://www.cisa.gov/cybersecurity-best-practices" target="_blank"><i class="fas fa-external-link-alt"></i> CISA Cybersecurity Best Practices</a></li>
+                        <li><a href="https://www.krebsonsecurity.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Krebs on Security</a></li>
+                        <li><a href="https://www.sans.org/white-papers/" target="_blank"><i class="fas fa-external-link-alt"></i> SANS White Papers</a></li>
+                        <li><a href="https://owasp.org/" target="_blank"><i class="fas fa-external-link-alt"></i> OWASP</a></li>
+                    </ul>
+                    <p class="disclaimer">Disclaimer: The resources listed above are provided for informational purposes only. All content is the property of the respective owners. No endorsement or warranty is implied.</p>
+                </section>
+            </main>
+        </div>
+  
+  </div>
+  
+</body>
+
+</html>
